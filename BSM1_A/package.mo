@@ -1295,9 +1295,9 @@ MATLAB is a registered trademark of The MathWorks, Inc.
       extends WasteWater.Icons.sensor_Q_air;
       Real Qm_air;
       discrete Real Qs_air;
-      WasteWater.ASM1.Interfaces.WWFlowOut Out annotation(
+      WasteWater.ASM1.Interfaces.AirFlowOut Out annotation(
         Placement(visible = true, transformation(origin = {89.6832, 8.24427}, extent = {{-6.77369, -6.77369}, {6.77369, 6.77369}}, rotation = 0), iconTransformation(origin = {89.6832, 8.24427}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
-      WasteWater.ASM1.Interfaces.WWFlowIn In annotation(
+      WasteWater.ASM1.Interfaces.AirFlowIn In annotation(
         Placement(visible = true, transformation(origin = {-92.5078, 8.24423}, extent = {{-6.1579, -6.1579}, {6.1579, 6.1579}}, rotation = 0), iconTransformation(origin = {-92.5078, 8.24423}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
       Modelica.Blocks.Interfaces.RealOutput Q_air annotation(
         Placement(visible = true, transformation(origin = {-4.56288, -76.1403}, extent = {{-12, 12}, {12, -12}}, rotation = -90), iconTransformation(origin = {-4.56288, -76.1403}, extent = {{-9.01578, 9.01578}, {9.01578, -9.01578}}, rotation = -90)));
@@ -1325,6 +1325,7 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
 
     "));
     end ADsensor_Q_air;
+
   end Modules;
 
   record Config
@@ -1416,7 +1417,7 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     BSM1.Modules.ADsensor_Q ADsensor_Waste annotation(
       Placement(visible = true, transformation(origin = {55.8603, -42.6901}, extent = {{-12, 12}, {12, -12}}, rotation = -90)));
   BSM1_A.Modules.ADsensor_Q aDsensor_Q_air annotation(
-      Placement(visible = true, transformation(origin = {6, -16}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
+      Placement(visible = true, transformation(origin = {-112, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   equation
     connect(ADsensor_Recycle.In, divider.Out1) annotation(
       Line(points = {{2.38167, -30.8379}, {39.452, -30.8379}, {39.452, -20.9964}, {45.5516, -20.9964}, {45.5516, 2.13523}, {39.1601, 2.13523}, {39.1601, 1.90748}}));
@@ -1542,5 +1543,5 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
   annotation(
     Documentation(info = "This library contains components to build models of biological municipal
 wastewater treatment plants based on the Benchmark Simulation Model No.1 (BSM1)"),
-  uses(WasteWater(version = "2.1.0")));
+  uses(WasteWater(version = "2.1.0"), Modelica(version = "3.2.2")));
 end BSM1_A;

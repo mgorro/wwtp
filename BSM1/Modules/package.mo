@@ -991,9 +991,9 @@ model ADsensor_Q_air "Advanced sensor to measure the flow rate and averages of s
   Real Qm_air;
   discrete Real Qs_air;
 
-  WasteWater.ASM1.Interfaces.WWFlowOut Out annotation(
+  WasteWater.ASM1.Interfaces.AirFlowOut Out annotation(
     Placement(visible = true, transformation(origin = {89.6832, 8.24427}, extent = {{-6.77369, -6.77369}, {6.77369, 6.77369}}, rotation = 0), iconTransformation(origin = {89.6832, 8.24427}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
-  WasteWater.ASM1.Interfaces.WWFlowIn In annotation(
+  WasteWater.ASM1.Interfaces.AirFlowIn In annotation(
     Placement(visible = true, transformation(origin = {-92.5078, 8.24423}, extent = {{-6.1579, -6.1579}, {6.1579, 6.1579}}, rotation = 0), iconTransformation(origin = {-92.5078, 8.24423}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealOutput Q_air annotation(
     Placement(visible = true, transformation(origin = {-4.56288, -76.1403}, extent = {{-12, 12}, {12, -12}}, rotation = -90), iconTransformation(origin = {-4.56288, -76.1403}, extent = {{-9.01578, 9.01578}, {9.01578, -9.01578}}, rotation = -90)));
@@ -1024,6 +1024,8 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
   annotation(
     Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
 end ADsensor_Q_air;
+
+
 
 
 
