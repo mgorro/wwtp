@@ -1000,7 +1000,6 @@ model ADsensor_Q_air "Advanced sensor to measure the flow rate and averages of s
 equation
   when sample(avg_start, avg_period) then
     Qs_air = gamma * pre(Qs_air) + abs(In.Q_air);
-  
     Qm_air = Qs_air / n;
  
   end when;
@@ -1024,6 +1023,7 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
   annotation(
     Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
 end ADsensor_Q_air;
+
 
 
 

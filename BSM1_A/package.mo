@@ -1417,8 +1417,10 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     BSM1.Modules.ADsensor_Q ADsensor_Waste annotation(
       Placement(visible = true, transformation(origin = {55.8603, -42.6901}, extent = {{-12, 12}, {12, -12}}, rotation = -90)));
   BSM1_A.Modules.ADsensor_Q aDsensor_Q_air annotation(
-      Placement(visible = true, transformation(origin = {-112, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
+      Placement(visible = true, transformation(origin = {-132, -18}, extent = {{-10, -10}, {10, 10}}, rotation = 180)));
   equation
+  connect(aDsensor_Q_air.In, aDsensor_Q_air.Out) annotation(
+      Line(points = {{-122.749, -18.8244}, {-140.749, -18.8244}, {-140.749, -18.8244}, {-140.749, -18.8244}}, color = {0, 0, 255}));
     connect(ADsensor_Recycle.In, divider.Out1) annotation(
       Line(points = {{2.38167, -30.8379}, {39.452, -30.8379}, {39.452, -20.9964}, {45.5516, -20.9964}, {45.5516, 2.13523}, {39.1601, 2.13523}, {39.1601, 1.90748}}));
     connect(Settler.Return, ADsensor_Return.In) annotation(
@@ -1538,6 +1540,8 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     annotation(
       Diagram(graphics = {Text(origin = {-222, 78}, extent = {{-6, 4}, {90, -16}}, textString = "BSM1 A: DO Cascade Control")}, coordinateSystem(initialScale = 0.1)));
   end BSM1_ClosedLoop;
+
+  extends Modelica.Icons.Library;
 
   extends Modelica.Icons.Library;
   annotation(
