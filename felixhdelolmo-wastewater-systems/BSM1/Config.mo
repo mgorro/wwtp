@@ -1,7 +1,7 @@
 within BSM1;
 
 record Config
- constant String BSM1_Directory="C:/Users/Computer/Desktop/felixhdelolmo-wastewater-systems/BSM1/";
+ constant String BSM1_Directory="C:/Users/User/Desktop/felixhdelolmo-wastewater-systems/BSM1/";
  constant String noise_include="#include \""+BSM1_Directory+"RandomNormal/ext_RandNormal.c\"";
  
  function RandomNormal

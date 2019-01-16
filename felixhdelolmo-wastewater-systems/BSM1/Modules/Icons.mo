@@ -1969,6 +1969,20 @@ partial model nitri "Icon for a nitrification tank"
       Diagram(coordinateSystem(preserveAspectRatio = false, initialScale = 0.1), graphics = {Ellipse(fillColor = {223, 223, 159}, fillPattern = FillPattern.Solid, lineThickness = 0.5, extent = {{-50, 50}, {50, -50}}, endAngle = 360), Text(extent = {{-98, 98}, {98, 62}}, textString = "%name"), Line(points = {{0, 50}, {0, 38}}, thickness = 0.5), Line(points = {{-50, 0}, {38, 0}}, thickness = 0.5), Line(points = {{50, 0}, {38, 0}}, thickness = 0.5), Line(points = {{-36, 34}, {-28, 26}}, thickness = 0.5), Line(points = {{34, 36}, {26, 28}}, thickness = 0.5), Line(points = {{0, 0}, {26, 28}}, thickness = 0.5), Polygon(fillPattern = FillPattern.Solid, points = {{30, 32}, {10, 24}, {24, 12}, {30, 32}}), Text(extent = {{-36, -10}, {36, -32}}, textString = "Q_air"), Line(points = {{0, -50}, {0, -90}}, thickness = 0.5), Line(points = {{-90, 0}, {-2, 0}}, thickness = 0.5), Line(points = {{4, 0}, {92, 0}}, thickness = 0.5)}));
   end sensor_Q_air;
 
+partial model MPC "Icon for Model Predictive Control (MPC)"
+  annotation(
+    Window(x = 0.45, y = 0.01, width = 0.35, height = 0.49),
+    Icon(coordinateSystem(preserveAspectRatio = false, initialScale = 0.1), graphics = {Line(origin = {0, 42}, points = {{-80, -6}, {-80, -80}, {80, -80}, {80, -6}}, thickness = 0.5), Line(origin = {0, 42}, points = {{80, -6}, {-80, -6}}, thickness = 0.5), Text(extent = {{-100, 100}, {100, 60}}, textString = "%name"), Rectangle(origin = {0, -1}, fillColor = {170, 255, 127}, fillPattern = FillPattern.Solid, extent = {{-80, 37}, {80, -37}}), Text(origin = {-1, 0}, extent = {{-55, 14}, {55, -14}}, textString = "MPC")}),
+    Documentation(info = "MPC"),
+    Documentation(info = "Icon for Model Predictive Control (MPC)"),
+    Diagram(coordinateSystem(preserveAspectRatio = false, initialScale = 0.1), graphics = {Line(origin = {0, 42}, points = {{-80, -6}, {-80, -80}, {80, -80}, {80, -6}}, thickness = 0.5), Line(origin = {0, 42}, points = {{80, -6}, {-80, -6}}, thickness = 0.5), Text(extent = {{-100, 100}, {100, 60}}, textString = "%name"), Rectangle(origin = {0, -1}, fillColor = {170, 255, 127}, fillPattern = FillPattern.Solid, extent = {{-80, 37}, {80, -37}}), Text(origin = {-1, 0}, extent = {{-55, 14}, {55, -14}}, textString = "MPC")}));
+end MPC;
+
+
+
+
+
+
 
   
 end Icons;

@@ -367,8 +367,6 @@ Parameters:
     In.Xnd = Out.Xnd;
     In.Salk = Out.Salk;
     annotation(
-      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -382,6 +380,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
   end ADsensor_Q;
 
   model WWSignal "Wastewater source"
@@ -469,6 +469,23 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     y[13] = Xnd.y;
     y[14] = Salk.y;
     annotation(
+      Documentation(info = "
+
+Main Author:
+   by Ph.D. Felix Hernandez del Olmo
+   Faculty of Informatics
+   National Distance University (UNED)
+   Madrid
+   Spain
+  
+
+The package is free software; it can be redistributed and /or modified under the terms of the Modelica license, see the license conditions and the accompanying
+disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
+
+      "),
+  Diagram,
+  Icon(graphics = {Rectangle(rotation = 0, lineColor = {0, 0, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-26.3345, 82.9181}, {29.8932, 70.1068}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-13.1673, 81.4947}, {14.5907, 72.5979}}, textString = "STEADY"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-77.9359, 86.4769}, {-33.0961, 66.9039}}, textString = "-1"), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-9.96441, 49.1103}, {17.7936, 22.4199}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-5.33808, 41.9929}, {14.9466, 29.8932}}, textString = "DRY"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-64.7687, 45.1957}, {-37.3665, 24.1993}}, textString = "0"), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {189, 193, 195}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-16.726, -1.77936}, {23.4875, -15.3025}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-9.60854, -3.20285}, {17.0819, -13.879}}, textString = "RAIN"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-72.9537, 2.4911}, {-29.1815, -18.8612}}, textString = "1"), Line(points = {{-16.0142, -17.0819}, {-21.7082, -24.1993}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-15.3025, -23.4875}, {-23.8434, -33.8078}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-4.98221, -21.3523}, {-11.7438, -29.5374}, {-12.0996, -29.5374}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-11.7438, -33.452}, {-17.0819, -39.8577}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{5.69395, -18.8612}, {-0.355872, -25.9786}, {-0.355872, -25.9786}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{5.69395, -28.4698}, {-1.06762, -38.0783}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{18.5053, -14.9466}, {12.4555, -23.8434}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{21.3523, -23.1317}, {16.0142, -32.0285}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {189, 193, 195}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-16.3701, -48.3986}, {23.1317, -61.9217}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-9.60854, -49.4662}, {16.726, -61.5658}}, textString = "STORM"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-63.7011, -45.9075}, {-38.79, -65.4804}}, textString = "2"), Polygon(points = {{7.11744, -64.0569}, {-16.726, -84.3416}, {0, -74.0214}, {-4.98221, -68.3274}, {7.11744, -64.0569}}, rotation = 0, lineColor = {255, 255, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25)}));
+    annotation(
       Documentation(info = "This component provides all ASM1 data at the influent of a wastewater treatment plant.
 The dimension of InPort is 14.
 
@@ -487,23 +504,6 @@ The dimension of InPort is 14.
  13 Xnd [g N/m3]
  14 Salk[mmol/l]
       "));
-    annotation(
-      Documentation(info = "
-
-Main Author:
-   by Ph.D. Felix Hernandez del Olmo
-   Faculty of Informatics
-   National Distance University (UNED)
-   Madrid
-   Spain
-  
-
-The package is free software; it can be redistributed and /or modified under the terms of the Modelica license, see the license conditions and the accompanying
-disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
-
-      "),
-  Diagram,
-  Icon(graphics = {Rectangle(rotation = 0, lineColor = {0, 0, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-26.3345, 82.9181}, {29.8932, 70.1068}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-13.1673, 81.4947}, {14.5907, 72.5979}}, textString = "STEADY"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-77.9359, 86.4769}, {-33.0961, 66.9039}}, textString = "-1"), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-9.96441, 49.1103}, {17.7936, 22.4199}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-5.33808, 41.9929}, {14.9466, 29.8932}}, textString = "DRY"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-64.7687, 45.1957}, {-37.3665, 24.1993}}, textString = "0"), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {189, 193, 195}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-16.726, -1.77936}, {23.4875, -15.3025}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-9.60854, -3.20285}, {17.0819, -13.879}}, textString = "RAIN"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-72.9537, 2.4911}, {-29.1815, -18.8612}}, textString = "1"), Line(points = {{-16.0142, -17.0819}, {-21.7082, -24.1993}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-15.3025, -23.4875}, {-23.8434, -33.8078}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-4.98221, -21.3523}, {-11.7438, -29.5374}, {-12.0996, -29.5374}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{-11.7438, -33.452}, {-17.0819, -39.8577}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{5.69395, -18.8612}, {-0.355872, -25.9786}, {-0.355872, -25.9786}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{5.69395, -28.4698}, {-1.06762, -38.0783}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{18.5053, -14.9466}, {12.4555, -23.8434}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Line(points = {{21.3523, -23.1317}, {16.0142, -32.0285}}, rotation = 0, color = {0, 0, 255}, pattern = LinePattern.Solid, thickness = 1.75), Ellipse(rotation = 0, lineColor = {255, 255, 0}, fillColor = {189, 193, 195}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25, extent = {{-16.3701, -48.3986}, {23.1317, -61.9217}}), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-9.60854, -49.4662}, {16.726, -61.5658}}, textString = "STORM"), Text(rotation = 0, lineColor = {0, 0, 0}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-63.7011, -45.9075}, {-38.79, -65.4804}}, textString = "2"), Polygon(points = {{7.11744, -64.0569}, {-16.726, -84.3416}, {0, -74.0214}, {-4.98221, -68.3274}, {7.11744, -64.0569}}, rotation = 0, lineColor = {255, 255, 0}, fillColor = {255, 255, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.Solid, lineThickness = 0.25)}));
   end WWSignal;
 
   model sensor_class_A
@@ -522,8 +522,6 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     connect(transferfunction1.y, transferfunction2.u) annotation(
       Line(points = {{-43.6675, -0.481928}, {-13.9759, -0.481928}, {-13.9759, -2.22045e-16}, {-14.4, -2.22045e-16}}));
     annotation(
-      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class A")}));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -538,6 +536,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class A")}));
   end sensor_class_A;
 
   model sensor_class_B
@@ -580,8 +580,6 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     connect(transferfunction1.y, transferfunction2.u) annotation(
       Line(points = {{-43.6675, -0.481928}, {-13.9759, -0.481928}, {-13.9759, -2.22045e-16}, {-14.4, -2.22045e-16}}));
     annotation(
-      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class B")}));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -595,6 +593,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class B")}));
   end sensor_class_B;
 
   model KLA_dynamics
@@ -613,8 +613,6 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     connect(transferfunction1.y, transferfunction2.u) annotation(
       Line(points = {{-43.6675, -0.481928}, {-13.9759, -0.481928}, {-13.9759, -2.22045e-16}, {-14.4, -2.22045e-16}}));
     annotation(
-      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class A")}));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -628,6 +626,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "class A")}));
   end KLA_dynamics;
 
   model Noise
@@ -646,8 +646,6 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     end when;
     y = u + n;
     annotation(
-      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "Noise")}));
-    annotation(
       Documentation(info = "
 
  Main Author:
@@ -661,6 +659,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Icon(graphics = {Text(rotation = 0, lineColor = {0, 0, 255}, fillColor = {0, 0, 0}, pattern = LinePattern.Solid, fillPattern = FillPattern.None, lineThickness = 0.25, extent = {{-60.7229, 53.9759}, {48.6747, -42.8916}}, textString = "Noise")}));
   end Noise;
 
   block CombiTimeTable "Table look-up with respect to time and linear/periodic extrapolation methods (data from matrix/file)"
@@ -1013,8 +1013,6 @@ MATLAB is a registered trademark of The MathWorks, Inc.
     Q_air = In.Q_air;
    
     annotation(
-      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -1024,6 +1022,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
   end ADsensor_Q_air;
 
 
@@ -1193,8 +1193,6 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     In.Xnd = Out.Xnd;
     In.Salk = Out.Salk;
     annotation(
-      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
-    annotation(
       Documentation(info = "
 
 Main Author:
@@ -1208,6 +1206,8 @@ The package is free software; it can be redistributed and /or modified under the
 disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
 
       "));
+    annotation(
+      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
   end ADsensor_NH;
 
 
@@ -1251,6 +1251,7 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     Out1.Snd = In.Snd;
     Out1.Xnd = In.Xnd;
     Out1.Salk = In.Salk;
+    
     Out2.Si = In.Si;
     Out2.Ss = In.Ss;
     Out2.Xi = In.Xi;
@@ -1264,6 +1265,7 @@ disclaimer in the documentation of package Modelica in file /Modelica/package.mo
     Out2.Snd = In.Snd;
     Out2.Xnd = In.Xnd;
     Out2.Salk = In.Salk;
+    
     annotation(
       Documentation(info = "This component divides one wastewater flow (ASM1) into two flows which are controlled by the signal u (0...1).
 Is u.signal=1, the flow goes to output 1 (Out1) and is u.signal=0, the flow goes to output 2 (Out2).
@@ -1271,52 +1273,6 @@ The concentrations of the outport-flows are equal to the concentration at inport
   end ControlledDivider2Dig;
 
 
-
-
-
-  model ADsensor_kk "Advanced sensor to measure the air flow rate and averages from a blower to a tank"
-    extends BSM1.Modules.Icons.sensor_Q_air;
-    parameter Real avg_start = 119;
-    parameter Real avg_period = 1 / 96;
-    parameter Real gamma = 1;
-    Real Qm_air;
-    Real x;
-    discrete Real Qs_air;
-    discrete Real n;
-    BSM1.Modules.Interfaces.AirFlowOut Out annotation(
-      Placement(visible = true, transformation(origin = {89.6832, 8.24427}, extent = {{-6.77369, -6.77369}, {6.77369, 6.77369}}, rotation = 0), iconTransformation(origin = {-92.3168, 0.24427}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
-    BSM1.Modules.Interfaces.AirFlowIn In annotation(
-      Placement(visible = true, transformation(origin = {-92.5078, 8.24423}, extent = {{-6.1579, -6.1579}, {6.1579, 6.1579}}, rotation = 0), iconTransformation(origin = {91.4922, 0.24423}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
-    Modelica.Blocks.Interfaces.RealOutput Q_air annotation(
-      Placement(visible = true, transformation(origin = {-4.56288, -76.1403}, extent = {{-12, 12}, {12, -12}}, rotation = -90), iconTransformation(origin = {-0.56288, -90.1403}, extent = {{-9.01578, 9.01578}, {9.01578, -9.01578}}, rotation = -90)));
-  Modelica.Blocks.Interfaces.RealOutput kk annotation(
-      Placement(visible = true, transformation(origin = {92, -68}, extent = {{-10, -10}, {10, 10}}, rotation = 0), iconTransformation(origin = {92, -68}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  equation
-    when sample(avg_start, avg_period) then
-      Qs_air = gamma * pre(Qs_air) + abs(In.Q_air);
-      n = gamma * pre(n) + 1;
-      Qm_air = Qs_air / n;
-    end when;
-    In.Q_air + Out.Q_air = 0;
-    Q_air = In.Q_air;
-    
-  
-    der(x)= 2*x + 5*In.Q_air ;
-    kk=4*x ;
-    
-    annotation(
-      Documentation(info = "Advanced sensor to measure the flow rate and averages of solids of an ASM1 wastewater stream"));
-    annotation(
-      Documentation(info = "
-
-Main Author:
-   Mikel Gorrotxategi Zipitria
-  
-The package is free software; it can be redistributed and /or modified under the terms of the Modelica license, see the license conditions and the accompanying
-disclaimer in the documentation of package Modelica in file /Modelica/package.mo/.
-
-      "));
-  end ADsensor_kk;
 
 
 
