@@ -473,7 +473,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Placement(visible = true, transformation(origin = {80.9751, 84.6192}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
     WasteWater.ASM1.sensor_O2 sensor_o2_tank5 annotation(
       Placement(visible = true, transformation(origin = {35.2313, 23.1317}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
-    Modelica.Blocks.Continuous.PI PI_O2(T = 0.042, k = 50000) annotation(
+    Modelica.Blocks.Continuous.PI PI_O2(T = 0.16, k = 46) annotation(
       Placement(visible = true, transformation(origin = {104.327, 85.516}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
     WasteWater.ASM1.mixer3 mixer annotation(
       Placement(visible = true, transformation(origin = {-73.903, 26.8318}, extent = {{-14.52, -14.52}, {14.52, 14.52}}, rotation = 0)));
@@ -497,10 +497,10 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Placement(visible = true, transformation(origin = {148.811, 92.0356}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
     Modelica.Blocks.Math.Feedback feedback3 annotation(
       Placement(visible = true, transformation(origin = {68, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
-    Modelica.Blocks.Continuous.PI PI_Qair(T = 0.01, k = 0.1) annotation(
+    Modelica.Blocks.Continuous.PI PI_Qair(T = 0.01, k = 0.005) annotation(
       Placement(visible = true, transformation(origin = {92, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
-    Modelica.Blocks.Continuous.PI PI_NH4(T = 0.7, k = -1) annotation(
-      Placement(visible = true, transformation(origin = {40, 88}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
+    Modelica.Blocks.Continuous.PI PI_NH4(T = 7, k = -3) annotation(
+      Placement(visible = true, transformation(origin = {40, 90}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
     Modelica.Blocks.Math.Feedback feedback1 annotation(
       Placement(visible = true, transformation(origin = {16, 88}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
     WasteWater.ASM1.sensor_NH sensor_NH_tank2 annotation(
@@ -513,9 +513,11 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Placement(visible = true, transformation(origin = {66, 86}, extent = {{-6, -6}, {6, 6}}, rotation = 0)));
   equation
     connect(sensor_NH_tank2.Snh, add1.u2) annotation(
-      Line(points = {{16, 54}, {36, 54}, {36, 74}, {54, 74}, {54, 82}, {58, 82}}, color = {0, 0, 127}));
+      Line(points = {{16, 54}, {40, 54}, {40, 76}, {52, 76}, {52, 82}, {58, 82}, {58, 82}}, color = {0, 0, 127}));
+    connect(feedback1.y, PI_NH4.u) annotation(
+      Line(points = {{24, 88}, {27, 88}, {27, 90}, {30, 90}}, color = {0, 0, 127}));
     connect(add1.u1, PI_NH4.y) annotation(
-      Line(points = {{59, 90}, {48, 90}, {48, 88}}, color = {0, 0, 127}));
+      Line(points = {{59, 90}, {49, 90}}, color = {0, 0, 127}));
     connect(feedback2.u1, add1.y) annotation(
       Line(points = {{76, 84}, {74, 84}, {74, 86}, {73, 86}}, color = {0, 0, 127}));
     connect(sensor_o2_tank5.So, feedback2.u2) annotation(
@@ -564,8 +566,6 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Line(points = {{-2, 32}, {8, 32}, {8, 46}, {8, 46}}));
     connect(NH4Setpoint.y, feedback1.u1) annotation(
       Line(points = {{2, 90}, {10, 90}, {10, 88}, {10, 88}}, color = {0, 0, 127}));
-    connect(feedback1.y, PI_NH4.u) annotation(
-      Line(points = {{24, 88}, {30, 88}, {30, 88}, {30, 88}}, color = {0, 0, 127}));
     connect(PI_Qair.y, blower3.u) annotation(
       Line(points = {{100, 58}, {118, 58}, {118, -38}, {32, -38}, {32, -38}, {32, -38}}, color = {0, 0, 127}));
     connect(feedback3.y, PI_Qair.u) annotation(
@@ -641,7 +641,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
     connect(tank5.Out, divider.In) annotation(
       Line(points = {{13.9572, 2.90824}, {21.7082, 2.90824}, {21.7082, 3.23132}, {20.242, 3.23132}}));
     annotation(
-      Diagram(graphics = {Text(origin = {-173, 78}, extent = {{-57, 20}, {39, -20}}, textString = "B2: Ammonium Based control: feedforward"), Text(origin = {-169, 47}, extent = {{-37, 9}, {37, -9}}, textString = "FF de la entrada o del tank 2???")}, coordinateSystem(initialScale = 0.1)));
+      Diagram(graphics = {Text(origin = {-173, 78}, extent = {{-57, 20}, {39, -20}}, textString = "B2: Ammonium Based control: feedforward"), Text(origin = {-169, 47}, extent = {{-37, 9}, {35, -3}}, textString = "FF del tank 2")}, coordinateSystem(initialScale = 0.1)));
   end BSM1_ClosedLoop_B2;
 
 
@@ -690,7 +690,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Placement(visible = true, transformation(origin = {80.9751, 84.6192}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
     WasteWater.ASM1.sensor_O2 sensor_o2_tank5 annotation(
       Placement(visible = true, transformation(origin = {35.2313, 23.1317}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
-    Modelica.Blocks.Continuous.PI PI_O2(T = 0.042, k = 50000) annotation(
+    Modelica.Blocks.Continuous.PI PI_O2(T = 0.2, k = 65) annotation(
       Placement(visible = true, transformation(origin = {104.327, 85.516}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
     WasteWater.ASM1.mixer3 mixer annotation(
       Placement(visible = true, transformation(origin = {-73.903, 26.8318}, extent = {{-14.52, -14.52}, {14.52, 14.52}}, rotation = 0)));
@@ -714,7 +714,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Placement(visible = true, transformation(origin = {148.811, 92.0356}, extent = {{-7.45106, -7.45106}, {7.45106, 7.45106}}, rotation = 0)));
     Modelica.Blocks.Math.Feedback feedback3 annotation(
       Placement(visible = true, transformation(origin = {68, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
-    Modelica.Blocks.Continuous.PI PI_NH4(T = 1, k = -10) annotation(
+    Modelica.Blocks.Continuous.PI PI_NH4(T = 9, k = -1.25) annotation(
       Placement(visible = true, transformation(origin = {40, 88}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
     Modelica.Blocks.Math.Feedback feedback1 annotation(
       Placement(visible = true, transformation(origin = {16, 88}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
