@@ -1,5 +1,5 @@
 
-How t o use the WasteWater library (with dymola) 
+How to use the WasteWater library (with dymola) 
 ===============================================
 
 
