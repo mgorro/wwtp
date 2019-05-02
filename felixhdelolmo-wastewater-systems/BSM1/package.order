@@ -4,6 +4,11 @@ BSM1_ClosedLoop_B2
 BSM1_ClosedLoop_C
 BSM1_ClosedLoop_D
 BSM1_ClosedLoop_plus_sensor
+BSM1_ClosedLoop
+BSM1_OpenLoop_A
+BSM1_OpenLoop_B1
+BSM1_OpenLoop_B2
+BSM1_OpenLoop_C
+BSM1_OpenLoop_D
 Modules
 Config
-BSM1_ClosedLoop

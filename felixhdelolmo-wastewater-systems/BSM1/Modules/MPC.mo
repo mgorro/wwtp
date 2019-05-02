@@ -15,6 +15,7 @@ model MPC "Icon for Model Predictive Control (MPC)"
   // Salida
   Real Y[1, 2];
   // Matrices de estado, modelo de segundo grado (Holenda, 2007)
+  //Holenda, B. (2007). Development of modelling, control and optimization tools for the activated sludge process. Cand. Diss. Pannonia, 155.
   Real X[2, 2];
   Real A[2, 2] = [-100.03, 115; 167.77, -211.47];
   Real B[2, 1] = [0.87; -1.55];
