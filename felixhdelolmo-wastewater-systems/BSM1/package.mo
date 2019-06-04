@@ -49,7 +49,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
     Modelica.Blocks.Continuous.PI PI_O2(T = 0.3, k = 45000000) annotation(
       Placement(visible = true, transformation(origin = {90.3274, 85.516}, extent = {{-8.19616, -8.19616}, {8.19616, 8.19616}}, rotation = 0)));
     WasteWater.ASM1.mixer3 mixer annotation(
-      Placement(visible = true, transformation(origin = {-73.903, 26.8318}, extent = {{-14.52, -14.52}, {14.52, 14.52}}, rotation = 0)));
+      Placement(visible = true, transformation(origin = {-107.903, 10.8318}, extent = {{-14.52, -14.52}, {14.52, 14.52}}, rotation = 0)));
     WasteWater.ASM1.pump RecyclePump(Q_min = 0.0, Q_max = 55338) annotation(
       Placement(visible = true, transformation(origin = {-69.7461, -40.5288}, extent = {{12, 12}, {-12, -12}}, rotation = 0)));
     WasteWater.ASM1.pump ReturnPump(Q_max = 18446) annotation(
@@ -73,6 +73,14 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
     Modelica.Blocks.Continuous.PI PI_Qair(T = 0.01, k = 10) annotation(
       Placement(visible = true, transformation(origin = {92, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
   equation
+    connect(WWSource.Out, mixer.In1) annotation(
+      Line(points = {{-21.6085, 70.6762}, {-10.6762, 70.6762}, {-10.6762, 51.2456}, {-88.6121, 51.2456}, {-88.6121, 29.8932}, {-122, 29.8932}, {-122, 16}}));
+    connect(ReturnPump.Out, mixer.In3) annotation(
+      Line(points = {{-79, -68}, {-94.4578, -68}, {-94.4578, 26.988}, {-122, 26.988}, {-122, 4}}));
+    connect(RecyclePump.Out, mixer.In2) annotation(
+      Line(points = {{-82, -44}, {-87.2289, -44}, {-87.2289, 23.6145}, {-122, 23.6145}, {-122, 10}}));
+    connect(mixer.Out, tank1.In) annotation(
+      Line(points = {{-93, 10}, {-51.0843, 10}, {-51.0843, 28}, {-64, 28}}));
     connect(ADsensor_Return.Out, ReturnPump.In) annotation(
       Line(points = {{-264, -156}, {-19.5, -156}, {-19.5, -58}, {-47, -58}}));
     connect(Settler.Return, ADsensor_Return.In) annotation(
@@ -87,8 +95,6 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Line(points = {{18, 86}, {32, 86}, {32, 84}, {34, 84}}, color = {0, 0, 127}));
     connect(tank1.Out, tank2.In) annotation(
       Line(points = {{-38, 28}, {-18.8612, 28}, {-18.8612, 26.9697}, {-18.7976, 26.9697}}));
-    connect(mixer.Out, tank1.In) annotation(
-      Line(points = {{-62.38, 26.4818}, {-51.0843, 26.4818}, {-51.0843, 28}, {-64, 28}}));
     connect(Temperature.y, tank1.T) annotation(
       Line(points = {{-95.9199, 43.7284}, {-53.7367, 43.7284}, {-53.7367, 33}, {-64, 33}}));
     connect(feedback2.y, PI_O2.u) annotation(
@@ -109,8 +115,6 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Line(points = {{2, -9}, {2, -20}, {3, -20}}));
     connect(aDsensor_Q_air_tank5.In, blower3.AirOut) annotation(
       Line(points = {{21, -20}, {30.5, -20}, {30.5, -27}, {22, -27}}));
-    connect(RecyclePump.Out, mixer.In2) annotation(
-      Line(points = {{-82, -44}, {-87.2289, -44}, {-87.2289, 23.6145}, {-83.7208, 23.6145}, {-83.7208, 23.7432}}));
     connect(ADsensor_Recycle.Out, RecyclePump.In) annotation(
       Line(points = {{-19, -45}, {-46.2651, -45}, {-46.2651, -37}, {-58, -37}}));
     connect(ADsensor_Recycle.In, divider.Out1) annotation(
@@ -119,8 +123,6 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Line(points = {{-83, -92}, {-39.8577, -92}, {-39.8577, -18.1495}, {-46.7453, -18.1495}, {-46.7453, -18.7429}}));
     connect(constant_blowers.y, blower2.u) annotation(
       Line(points = {{-83, -92}, {-39.5018, -92}, {-39.5018, -24.5552}, {-15.6584, -24.5552}, {-15.6584, -18.1495}, {-19.0082, -18.1495}, {-19.0082, -18.5272}}));
-    connect(ReturnPump.Out, mixer.In3) annotation(
-      Line(points = {{-79, -68}, {-94.4578, -68}, {-94.4578, 26.988}, {-83.5658, 26.988}, {-83.5658, 26.7402}}));
     connect(tank3.AirIn, blower1.AirOut) annotation(
       Line(points = {{-55.6984, -5.05814}, {-55.8719, -5.05814}, {-55.8719, -10.2027}, {-56.0215, -10.2027}}));
     connect(ADsensor_Waste.Out, WasteSludge.In) annotation(
@@ -173,8 +175,6 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       Line(points = {{-55.8391, 77.2242}, {-44.9477, 77.2242}, {-44.9477, 77.0035}, {-44.9477, 77.0035}}));
     connect(WWSignal.y[14], WWSource.u[14]) annotation(
       Line(points = {{-55.8391, 77.2242}, {-44.9477, 77.2242}, {-44.9477, 77.0035}, {-44.9477, 77.0035}}));
-    connect(WWSource.Out, mixer.In1) annotation(
-      Line(points = {{-21.6085, 70.6762}, {-10.6762, 70.6762}, {-10.6762, 51.2456}, {-88.6121, 51.2456}, {-88.6121, 29.8932}, {-83.6174, 29.8932}, {-83.6174, 29.4271}}));
     connect(tank4.AirIn, blower2.AirOut) annotation(
       Line(points = {{-27.5845, -5.05814}, {-27.4021, -5.05814}, {-27.4021, -10.7634}, {-27.4411, -10.7634}}));
     connect(tank2.Out, tank3.In) annotation(
