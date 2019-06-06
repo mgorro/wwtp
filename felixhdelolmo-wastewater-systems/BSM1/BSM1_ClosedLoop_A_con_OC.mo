@@ -21,6 +21,14 @@ model BSM1_ClosedLoop_A_con_OC
   Real EQ;
   //Real IQ;
   //*************************
+  //Variables para suavizar OC:
+  parameter Real plant_start = 1;
+  parameter Real plant_period = 14 / 24 / 60;
+  parameter Real smooth_days=1;
+  final Real gamma = exp(log(0.01) / ceil(smooth_days / plant_period));
+  final Real n = 1 / (1 - gamma);
+  Real OCm;
+  //****************************
   Modelica.Blocks.Sources.Constant constant_pumps(k = 1) annotation(
     Placement(visible = true, transformation(origin = {41.5231, -72.5979}, extent = {{-9.91736, -9.91736}, {9.91736, 9.91736}}, rotation = 0)));
   WasteWater.ASM1.SludgeSink WasteSludge annotation(
@@ -90,9 +98,13 @@ model BSM1_ClosedLoop_A_con_OC
   Modelica.Blocks.Continuous.PI PI_Qair(T = 0.01, k = 10) annotation(
     Placement(visible = true, transformation(origin = {92, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
 equation
-  // Felix Hernandez del Olmo
-  //Añadiendo el hook que permite calcular el OC
-  //when sample(agent_start, avg_period) then
+// Felix Hernandez del Olmo
+  //Añadiendo el hook que permite suavizar el OC
+  when sample(plant_start, plant_period) then
+    OCm=gamma*pre(OCm)+OC/n;
+  end when;
+  
+
     SP = (ADsensor_Waste.TSS + ADsensor_Effluent.TSS) / 1000;
     PE = 0.004 * abs(ADsensor_Recycle.Out.Q) + 0.008 * abs(ADsensor_Return.Out.Q) + 0.05 * abs(ADsensor_Waste.Out.Q);
     AE = tank3.AE + tank4.AE + tank5.AE;
@@ -103,9 +115,11 @@ equation
     //SPm = gamma * pre(SPm) + SP / n;
     OC = gamma1 * (AE + PE + ME) + gamma2 * SP + EF / 10;
     EQ = ADsensor_Effluent.EQ;
-    //IQ = ADsensor_Influent.IQ;
-  //end when;
+  //IQ = ADsensor_Influent.IQ;
 
+  
+
+  
   connect(ADsensor_Return.Out, ReturnPump.In) annotation(
     Line(points = {{-264, -156}, {-19.5, -156}, {-19.5, -58}, {-47, -58}}));
   connect(Settler.Return, ADsensor_Return.In) annotation(
