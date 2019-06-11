@@ -236,4 +236,8 @@ equation
     Line(points = {{39.0747, 4.51246}, {45.5516, 4.51246}, {45.5516, 28.0807}, {60.2777, 28.0807}}));
   annotation(
     Diagram(graphics = {Text(origin = {-189, 78}, extent = {{-57, 20}, {39, -20}}, textString = "A: DO Cascade Control")}, coordinateSystem(initialScale = 0.1)));
+<<<<<<< HEAD
 end BSM1_ClosedLoop_A_con_OC;
+=======
+end BSM1_ClosedLoop_A_con_OC;
+>>>>>>> 6a0bb4bbbac3dc9b7d19e3009e80b169585e0535

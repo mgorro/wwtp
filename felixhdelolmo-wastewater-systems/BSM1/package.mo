@@ -99,6 +99,7 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
     Modelica.Blocks.Continuous.PI PI_Qair(T = 0.01, k = 10) annotation(
       Placement(visible = true, transformation(origin = {92, 58}, extent = {{-8, -8}, {8, 8}}, rotation = 0)));
   equation
+<<<<<<< HEAD
   // Felix Hernandez del Olmo
     //Añadiendo el hook que permite suavizar el OC
     when sample(plant_start, plant_period) then
@@ -118,6 +119,8 @@ package BSM1 "Component models for the Benchmark Simulation Model No.1"
       EQ = ADsensor_Effluent.EQ;
     //IQ = ADsensor_Influent.IQ;
   
+=======
+>>>>>>> 6a0bb4bbbac3dc9b7d19e3009e80b169585e0535
     connect(WWSource.Out, mixer.In1) annotation(
       Line(points = {{-21.6085, 70.6762}, {-10.6762, 70.6762}, {-10.6762, 51.2456}, {-88.6121, 51.2456}, {-88.6121, 29.8932}, {-122, 29.8932}, {-122, 16}}));
     connect(ReturnPump.Out, mixer.In3) annotation(
