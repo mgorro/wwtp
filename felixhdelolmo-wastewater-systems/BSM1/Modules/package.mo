@@ -99,6 +99,8 @@ The dimension of InPort is 14.
     extends Modules.Interfaces.ASM1base;
     // tank specific parameters
     parameter Modelica.SIunits.Volume V = 1000 "Volume of denitrification tank";
+    final Real ME = 24 * 0.005 * V "Mixing Energy in Kwh";
+   
     Interfaces.WWFlowAsm1in In annotation(
       Placement(transformation(extent = {{-110, -10}, {-90, 10}}, rotation = 0)));
     Interfaces.WWFlowAsm1out Out annotation(
