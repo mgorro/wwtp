@@ -23,7 +23,7 @@ model BSM1_ClosedLoop_A_con_OC
   //*************************
   //Variables para suavizar OC:
   parameter Real plant_start = 1;
-  parameter Real plant_period = 14 / 24 / 60;
+  parameter Real plant_period = 15 / 24 / 60;
   parameter Real smooth_days=1;
   final Real gamma = exp(log(0.01) / ceil(smooth_days / plant_period));
   final Real n = 1 / (1 - gamma);
@@ -113,7 +113,7 @@ equation
     //Energy = gamma * pre(Energy) + (AE + PE + ME) / n;
     //EFm = gamma * pre(EFm) + EF / n;
     //SPm = gamma * pre(SPm) + SP / n;
-    OC = gamma1 * (AE + PE + ME) + gamma2 * SP + EF / 10;
+    OC = gamma1 * (AE + PE + ME) + gamma2 * SP + EF;
     EQ = ADsensor_Effluent.EQ;
   //IQ = ADsensor_Influent.IQ;
 
@@ -236,8 +236,4 @@ equation
     Line(points = {{39.0747, 4.51246}, {45.5516, 4.51246}, {45.5516, 28.0807}, {60.2777, 28.0807}}));
   annotation(
     Diagram(graphics = {Text(origin = {-189, 78}, extent = {{-57, 20}, {39, -20}}, textString = "A: DO Cascade Control")}, coordinateSystem(initialScale = 0.1)));
-<<<<<<< HEAD
 end BSM1_ClosedLoop_A_con_OC;
-=======
-end BSM1_ClosedLoop_A_con_OC;
->>>>>>> 6a0bb4bbbac3dc9b7d19e3009e80b169585e0535
